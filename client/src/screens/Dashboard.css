@@ -1,0 +1,63 @@
+/* Dashboard.css */
+
+/* Container for the Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: row; /* Sidebar on the left and content on the right by default */
+    min-height: 100vh; /* Full viewport height */
+  }
+  
+  /* Main content styling */
+  .main-content {
+    flex: 1; /* Takes the remaining width */
+    padding: 20px; /* Padding around the content */
+    background-color: #f3f3f3; /* Light background color for content area */
+    overflow-x: auto; /* Handle horizontal overflow gracefully */
+  }
+  
+  /* Table styling for displaying patient data */
+  .patient-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove spaces between table cells */
+    margin-top: 20px; /* Space above the table */
+  }
+  
+  .patient-table table {
+    width: 100%;
+    border: 1px solid #ddd; /* Light border for table cells */
+  }
+  
+  .patient-table th,
+  .patient-table td {
+    padding: 12px; /* Padding inside each cell */
+    text-align: left; /* Left-align cell content */
+    border-bottom: 1px solid #ddd; /* Border below each row */
+  }
+  
+  .patient-table th {
+    background-color: #4caf50; /* Green background for table headers */
+    color: white; /* White text color for table headers */
+  }
+  
+  .patient-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+  }
+  
+  /* Responsive design for mobile view */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column; /* Stack sidebar and content vertically */
+    }
+  
+    .sidebar {
+      width: 100%; /* Full width for the sidebar on mobile */
+      height: auto; /* Adjust height to fit content */
+      flex-direction: row; /* Display sidebar items in a row */
+      overflow-x: auto; /* Enable horizontal scrolling if needed */
+    }
+  
+    .main-content {
+      padding: 10px; /* Reduce padding for mobile view */
+    }
+  }
+  

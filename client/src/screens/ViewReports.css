@@ -1,0 +1,60 @@
+/* ViewReports.css */
+
+.view-reports-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .reports-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2e7d32;
+  }
+  
+  .reports-table-wrapper {
+    overflow-x: auto; /* Allows horizontal scrolling for smaller screens */
+  }
+  
+  .reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reports-table th,
+  .reports-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .reports-table th {
+    background-color: #2e7d32;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reports-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row color for better readability */
+  }
+  
+  .reports-table tr:hover {
+    background-color: #e0f7fa; /* Highlight row on hover */
+  }
+  
+  /* Responsive styling for smaller devices */
+  @media (max-width: 768px) {
+    .reports-table th,
+    .reports-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .reports-heading {
+      font-size: 20px;
+    }
+  }
+  

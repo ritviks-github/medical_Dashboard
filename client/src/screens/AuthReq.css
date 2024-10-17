@@ -1,0 +1,76 @@
+/* AuthReq.css */
+
+.auth-req-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.submit-button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 768px) {
+    .auth-req-container {
+        flex-direction: column;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    .form-group {
+        width: 90%;
+    }
+}
