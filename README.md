@@ -9,7 +9,6 @@ A full-stack web application designed to manage and view patient information, bu
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
-- [Build and Deployment](#build-and-deployment)
 - [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
 - [License](#license)
