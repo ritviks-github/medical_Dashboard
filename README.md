@@ -1,3 +1,7 @@
+# How to Use
+Pull the project into your machine, and make the following changes
+You will be needed to add your database connection string, and by looking at various database user models, you might need to populate the clusters with sample data
+
 # Medical Dashboard
 
 A full-stack web application designed to manage and view patient information, built with React (front-end), Node.js/Express (back-end), and MongoDB (database). The app provides a responsive and intuitive interface for healthcare professionals to track patient details, search by mobile number, and view medical history and treatment plans.
