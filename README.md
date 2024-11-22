@@ -3,15 +3,6 @@
 A full-stack web application designed to manage and view patient information, built with React (front-end), Node.js/Express (back-end), and MongoDB (database). The app provides a responsive and intuitive interface for healthcare professionals to track patient details, search by mobile number, and view medical history and treatment plans.
 It also provides an Administrator functionality to grant or Reject authorization requests for mediclaim
 
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Contributing](#contributing)
-
 ## Features
 
 - **Patient Management:** View and manage detailed patient information.
