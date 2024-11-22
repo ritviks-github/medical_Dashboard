@@ -1,11 +1,11 @@
-/* AuthReq.css */
-
+/* AuthReq Container */
 .auth-req-container {
     display: flex;
     flex-direction: row;
     height: 100vh;
 }
 
+/* Form Container Styling */
 .form-container {
     flex: 1;
     padding: 20px;
@@ -14,13 +14,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%; /* Prevents overflow */
 }
 
+/* Header styling */
 h2 {
     color: #2e7d32;
     margin-bottom: 20px;
 }
 
+/* Form Group Styling */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -29,23 +32,27 @@ h2 {
     max-width: 500px;
 }
 
+/* Label Styling */
 .form-group label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
+/* Input Styling */
 .form-group input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+/* Error Message Styling */
 .error {
     color: red;
     font-size: 12px;
     margin-top: 5px;
 }
 
+/* Submit Button Styling */
 .submit-button {
     background-color: #2e7d32;
     color: white;
@@ -60,17 +67,38 @@ h2 {
     background-color: #45a049;
 }
 
-/* Responsive styling for mobile devices */
+/* Responsive Styling for Mobile Devices */
 @media (max-width: 768px) {
     .auth-req-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack sidebar and form vertically */
     }
 
     .form-container {
-        padding: 10px;
+        padding: 10px; /* Reduce padding for mobile */
+        max-width: 100%; /* Ensure full screen usage */
     }
 
     .form-group {
-        width: 90%;
+        width: 90%; /* Make form fields responsive */
+    }
+
+    .submit-button {
+        width: 100%; /* Make submit button take full width on mobile */
+        padding: 12px; /* Adjust padding for mobile */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Adjust font size for small screens */
+    }
+
+    .form-group input {
+        font-size: 1rem; /* Larger text size for easier readability */
+    }
+}
+
+/* Sidebar for mobile: Hide or collapse sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide sidebar on mobile */
     }
 }

@@ -3,11 +3,13 @@ import Sidebar from '../components/Sidebar';
 import axios from 'axios';
 import './Dashboard.css';
 import PatientInfo from './PatientInfo';
+import { Container, Box, Typography, Paper, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
   const [patientData, setPatientData] = useState([]);
   const [selectedPatient, setSelectedPatient] = useState(null);
-
+  const navigate = useNavigate();
   // Fetch patient data from the server
   useEffect(() => {
     axios
@@ -19,7 +21,22 @@ export default function Dashboard() {
         console.error('Error fetching patient data:', error);
       });
   }, []);
-
+  const token = localStorage.getItem("authToken");
+  if (!token) {
+    return (
+      <Container maxWidth="lg" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <Paper elevation={3} style={{ padding: '20px', textAlign: 'center' }}>
+          <Typography variant="h5" color="error">Not Authorized</Typography>
+          <Typography variant="body1" style={{ marginBottom: '20px' }}>
+            You need to log in to access this page.
+          </Typography>
+          <Button variant="contained" color="primary" onClick={() => navigate('/login')}>
+            Go to Login
+          </Button>
+        </Paper>
+      </Container>
+    );
+  }
   // Handle row click to set the selected patient
   const handleRowClick = (patient) => {
     setSelectedPatient(patient);

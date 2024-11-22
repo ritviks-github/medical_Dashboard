@@ -1,88 +1,92 @@
+/* Sidebar container */
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column; /* Default vertical layout */
+  height: 100vh; /* Full height of the viewport */
+  justify-content: space-between; /* Space items evenly */
+  background-color: #f9f9f9; /* Light background color */
+  padding: 20px; /* Padding around the sidebar */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Title styling */
+#dashboard-title {
+  background-color: #2e7d32; /* Darker green background */
+  color: #ffffff; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px; /* Padding inside the button */
+  font-size: 18px; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  cursor: default; /* Not clickable */
+  text-align: center; /* Center text */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Container for buttons */
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically by default */
+  align-items: center; /* Center buttons */
+  gap: 10px; /* Space between buttons */
+}
+
+/* Specific button styling */
+#view-patients, #submit-prior-authorization {
+  background-color: #4caf50; /* Green background for default buttons */
+  color: white; /* White text */
+  width: 100%; /* Make buttons take full width in desktop */
+}
+
+#view-patients:hover, #submit-prior-authorization:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Common button styles */
+.btn {
+  display: inline-block; /* Inline-block for proper button styling */
+  padding: 12px 20px; /* Padding inside buttons */
+  margin: 5px 0; /* Space between buttons */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from links */
+  text-align: center; /* Center text */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Logout button */
+.btn-success {
+  background-color: #2196F3; /* Blue color for logout button */
+  color: white;
+  width: 100%;
+}
+
+/* Media query for mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    flex-direction: row; /* Change to horizontal layout */
+    height: auto; /* Adjust height to fit content */
+    width: 100%; /* Full width of the viewport */
+    padding: 10px; /* Reduce padding for mobile */
     justify-content: space-between; /* Space items evenly */
-    background-color: #f9f9f9; /* Light background color */
-    padding: 20px; /* Padding around the sidebar */
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
   }
-  
-  /* Title styling */
+
   #dashboard-title {
-    background-color: #2e7d32; /* Darker green background */
-    color: #ffffff; /* White text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 15px; /* Padding inside the button */
-    font-size: 18px; /* Larger font size */
-    font-weight: bold; /* Bold text */
-    cursor: default; /* Not clickable */
-    text-align: center; /* Center text */
-    margin-bottom: 20px; /* Space below the title */
+    flex: 1; /* Allow the title to take more space */
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-right: 10px; /* Add some spacing between elements */
   }
-  
+
   .button-container {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center buttons */
+    flex-direction: row; /* Arrange buttons in a row */
+    align-items: center; /* Align items to the center */
+    gap: 15px; /* Add space between buttons */
+    width: 100%; /* Allow buttons to expand */
   }
-  
-  /* Specific styling for buttons */
-  #view-patients {
-    background-color: #4caf50; /* Green background for the View All Patients button */
-    color: white; /* White text */
-  }
-  
-  #view-patients:hover {
-    background-color: #45a049; /* Darker green on hover */
-  }
-  
-  #submit-prior-authorization {
-    background-color: #2196F3; /* Blue background for the Submit Prior Authorization button */
-    color: white; /* White text */
-  }
-  
-  #submit-prior-authorization:hover {
-    background-color: #1e88e5; /* Darker blue on hover */
-  }
-  
-  /* Common button styles */
+
   .btn {
-    display: inline-block; /* Inline-block for proper button styling */
-    padding: 12px 20px; /* Padding inside buttons */
-    margin: 5px 0; /* Space between buttons */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline from links */
-    text-align: center; /* Center text */
-    transition: background-color 0.3s; /* Smooth background color transition */
+    width: 100%; /* Make each button take equal width in horizontal navbar */
+    padding: 10px 15px; /* Adjust padding for mobile */
+    margin: 0; /* Remove margin for buttons */
   }
-  
-  /* Media query for mobile view */
-  @media (max-width: 768px) {
-    .sidebar {
-      flex-direction: row; /* Change to horizontal layout */
-      height: auto; /* Adjust height to fit content */
-      width: 100%; /* Full width of the viewport */
-      padding: 10px; /* Reduce padding for mobile */
-      justify-content: flex-start; /* Align items to the start */
-      overflow-x: auto; /* Enable horizontal scrolling if needed */
-    }
-  
-    #dashboard-title {
-      flex: 1; /* Allow the title to take more space */
-      margin-bottom: 0; /* Remove bottom margin for horizontal layout */
-      margin-right: 10px; /* Add some spacing between elements */
-    }
-  
-    .button-container {
-      flex-direction: row; /* Arrange buttons in a row */
-      align-items: center; /* Align items to the center */
-    }
-  
-    .btn {
-      margin: 0 5px; /* Add horizontal margin between buttons */
-      padding: 8px 12px; /* Smaller padding for buttons on mobile */
-    }
-  }
-  
+}

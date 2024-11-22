@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import './AuthReq.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Container, Box, Typography, Paper, Button } from '@mui/material';
 
 export default function AuthReq() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,23 @@ export default function AuthReq() {
     setErrors(formErrors);
     return Object.keys(formErrors).length === 0;
   };
-
+  const token = localStorage.getItem("authToken");
+  const navigate = useNavigate();
+  if (!token) {
+    return (
+      <Container maxWidth="lg" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <Paper elevation={3} style={{ padding: '20px', textAlign: 'center' }}>
+          <Typography variant="h5" color="error">Not Authorized</Typography>
+          <Typography variant="body1" style={{ marginBottom: '20px' }}>
+            You need to log in to access this page.
+          </Typography>
+          <Button variant="contained" color="primary" onClick={() => navigate('/login')}>
+            Go to Login
+          </Button>
+        </Paper>
+      </Container>
+    );
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {

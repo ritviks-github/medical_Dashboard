@@ -8,6 +8,8 @@ import AuthReq from './screens/AuthReq';
 import ViewReports from './screens/ViewReports';
 import PatientInfo from './screens/PatientInfo';
 import Filter from './screens/Filter';
+import AdminLogin from './screens/AdminLogin';
+import Admin from './screens/Admin';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path='/viewRep' element={<ViewReports />} />
         <Route path='/info' element={<PatientInfo />} />
         <Route path='/filter' element={<Filter />} />
+        <Route path='/adminLogin' element={<AdminLogin />} />
+        <Route path='/admin' element={<Admin />} />
       </Routes>
     </div>
   );

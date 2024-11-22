@@ -30,6 +30,7 @@ export default function ViewReports() {
                 <th>Diagnosis Code</th>
                 <th>Date of Service</th>
                 <th>Insurance Plan</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -40,6 +41,7 @@ export default function ViewReports() {
                   <td>{report.diagnosisCode}</td>
                   <td>{new Date(report.dateOfService).toLocaleDateString()}</td>
                   <td>{report.insurancePlan}</td>
+                  <td>{report.status}</td>
                 </tr>
               ))}
             </tbody>

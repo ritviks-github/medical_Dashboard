@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { TextField, Button, Container, Box, Typography, Card, CardContent } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export default function Login() {
+export default function AdminLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  
-  const token = localStorage.getItem('authToken');
+  const token = localStorage.getItem("authToken");
   useEffect(()=>{
     if(token){
-      navigate('/home');
+      navigate('/admin')
     }
   },[]);
   const handleLogin = (e)=>{
     e.preventDefault();
-    axios.post("http://localhost:5000/api/login",{email,password}).then((res)=>{
+    axios.post("http://localhost:5000/api/adminlogin",{email,password}).then((res)=>{
         if(res.data.success){
             const token = res.data.authToken;
             localStorage.setItem("authToken",token);
             alert("User logged in successfully, click OK to redirect to Home screen");
-            navigate('/home');
+            navigate('/admin');
         }else if(res.data === 'signup'){
             alert("User not found, click OK to redirect to Signup page");
             navigate('/');
@@ -32,8 +31,7 @@ export default function Login() {
             alert("Could not log you in at the moment, Please try again later. Thank you for your cooperation :)");
         }
     })
-    
-    
+
   }
   return (
     <Container maxWidth="sm" style={{ display: 'flex', justifyContent: 'center', minHeight: '100vh', alignItems: 'center' }}>
@@ -41,7 +39,8 @@ export default function Login() {
         <CardContent>
           <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" padding="20px">
             <Typography variant="h4" style={{ color: '#2e7d32', marginBottom: '20px' }}>Medical Dashboard Login</Typography>
-
+            <p>Sample Email : example@gmail.com</p>
+            <p>Sample Password : 123456</p>
             <TextField
               label="Email"
               variant="outlined"
@@ -75,10 +74,6 @@ export default function Login() {
             >
               Login
             </Button>
-
-            <Typography variant="body2" style={{ color: '#888', marginTop: '15px' }}>
-              Admin Login ?<Link to='/adminLogin' style={{ color: '#2e7d32', textDecoration: 'none' }}>Press Here</Link>
-            </Typography>
           </Box>
         </CardContent>
       </Card>

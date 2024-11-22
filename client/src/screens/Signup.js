@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import validator from 'validator';
 import zxcvbn from 'zxcvbn';
 import { TextField, Button, Container, Box, Typography, Card, CardContent, MenuItem } from '@mui/material';
@@ -6,6 +6,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Signup() {
+  const token = localStorage.getItem("authToken");
+  useEffect(()=>{
+    if(token){
+      navigate('/home');
+    }
+  },[]);
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('');

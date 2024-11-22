@@ -13,6 +13,7 @@ app.use('/api',require('./routes/getPatients'));
 app.use('/api',require('./routes/submitReport'));
 app.use('/api',require('./routes/getReports'));
 app.use('/api',require('./routes/search'));
+app.use('/api',require('./routes/admin'));
 
 
 
